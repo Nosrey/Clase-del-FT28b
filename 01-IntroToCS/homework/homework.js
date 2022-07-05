@@ -2,9 +2,10 @@
 
 function BinarioADecimal(num) {
   // tu codigo aca
-  var arr = String(num).split('').map(function(num) {
+  var arr = num.split('').map(function(num) {
     return Number(num)
   })
+
   var total = 0;
 
   for (let i = 0; i < arr.length; i++) {
