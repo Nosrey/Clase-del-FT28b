@@ -45,11 +45,10 @@ function cacheFunction(cb) {
   */
   var func = cb;
   var obj = {};
-  var j = 0;
+  
   return function(arg){
     if (!obj.hasOwnProperty(arg)) {
-      j = func(arg);
-      obj[arg] = j;
+      obj[arg] = func(arg);
       return obj[arg];
     }
     else {
