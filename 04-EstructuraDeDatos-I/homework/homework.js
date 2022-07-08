@@ -15,9 +15,26 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  if (n < 2 && n > -1) {return 1}
+  else if (n < 0) {return 0}
+  return n * nFactorial(n-1);
 }
 
 function nFibonacci(n) {
+  var contador = 1;
+  var fibo = [0,1];
+  function suma() {
+    if (fibo.length <= n) {
+      fibo.push(fibo[contador - 1] + fibo[(contador)]);
+      ++contador;
+      return suma();
+    }
+    else {
+      return fibo;
+    }
+  }
+  suma();
+  return fibo[n];
 }
 
 /*
@@ -30,7 +47,19 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
+  this.cola = [];
 
+  this.enqueue = function(elemento) {
+    return this.cola.push(elemento);
+  }
+
+  this.dequeue = function() {
+    return this.cola.shift();
+  }
+
+  this.size = function() {
+    return this.cola.length;
+  }
 }
 
 // No modifiquen nada debajo de esta linea
