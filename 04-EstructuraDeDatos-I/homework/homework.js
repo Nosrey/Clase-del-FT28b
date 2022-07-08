@@ -56,10 +56,10 @@ function Queue() {
   this.dequeue = function() {
     return this.cola.shift();
   }
+}
 
-  this.size = function() {
-    return this.cola.length;
-  }
+Queue.prototype.size = function() {
+  return this.cola.length;
 }
 
 // No modifiquen nada debajo de esta linea
