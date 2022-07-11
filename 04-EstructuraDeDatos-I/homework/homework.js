@@ -48,14 +48,14 @@ Pueden utilizar class o función constructora.
 
 function Queue() {
   this.cola = [];
+}
 
-  this.enqueue = function(elemento) {
-    return this.cola.push(elemento);
-  }
+Queue.prototype.enqueue = function(elemento) {
+  return this.cola.push(elemento)
+}
 
-  this.dequeue = function() {
-    return this.cola.shift();
-  }
+Queue.prototype.dequeue = function() {
+  return this.cola.shift();
 }
 
 Queue.prototype.size = function() {
